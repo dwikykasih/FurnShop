@@ -1,1 +1,1 @@
-# react-shop-app
+# Furniture Online Shop (Toko Perabotan Online)
