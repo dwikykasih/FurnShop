@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
+
 const productSchema = mongoose.Schema({
     writer: {
         type: Schema.Types.ObjectId,
@@ -33,12 +34,23 @@ const productSchema = mongoose.Schema({
     views: {
         type: Number,
         default: 0
+    },
+    //========================
+    name: {
+        type: String,
+        require: true
+    },
+    date: {
+        type: Date,
+        default: Date.now
     }
+
+    //========================
 }, { timestamps: true })
 
 
-productSchema.index({ 
-    title:'text',
+productSchema.index({
+    title: 'text',
     description: 'text',
 }, {
     weights: {

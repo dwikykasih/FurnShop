@@ -6,13 +6,14 @@ import { USER_SERVER } from '../../../Config';
 import { withRouter } from 'react-router-dom';
 import { useSelector } from "react-redux";
 
+
 function RightMenu(props) {
   const user = useSelector(state => state.user)
 
   const logoutHandler = () => {
     axios.get(`${USER_SERVER}/logout`).then(response => {
       if (response.status === 200) {
-        props.history.push("/login");
+        props.history.push("./views/Activity/Login.js");
       } else {
         alert('Logout gagal')
       }
@@ -23,10 +24,10 @@ function RightMenu(props) {
     return (
       <Menu mode={props.mode}>
         <Menu.Item key="mail">
-          <a href="/login">Masuk <Icon type="login" style={{ fontSize: 20, marginBottom: 3 }} /></a>
+          <a href="./views/Activity/Login.js">Login <Icon type="login" style={{ fontSize: 20, marginBottom: 3 }} /></a>
         </Menu.Item>
         <Menu.Item key="app">
-          <a href="/register">Daftar <Icon type="user" style={{ fontSize: 20, marginBottom: 3 }} /></a>
+          <a href="./Activity/Register.js">Register <Icon type="user" style={{ fontSize: 20, marginBottom: 3 }} /></a>
         </Menu.Item>
       </Menu>
     )
@@ -43,8 +44,8 @@ function RightMenu(props) {
         </Menu.Item>
 
         <Menu.Item key="cart">
-            <a href="/user/cart">Keranjang <Icon type="shopping-cart" style={{ fontSize: 20, marginBottom: 3 }} />
-            </a>
+          <a href="/user/cart">Keranjang <Icon type="shopping-cart" style={{ fontSize: 20, marginBottom: 3 }} />
+          </a>
         </Menu.Item>
 
 

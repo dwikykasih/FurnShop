@@ -17,6 +17,17 @@ const connect = mongoose.connect(config.mongoURI, { useNewUrlParser: true, useUn
   .then(() => console.log('Database terkoneksi'))
   .catch(err => console.log(err));
 
+//=========================================
+const db = require('./config/key').mongoURI;
+
+mongoose
+  .connect(db)
+  .then(() => console.log('MongoDB connectedd'))
+  .catch(err => console.log(err));
+
+
+//=========================================
+
 app.use(cors())
 
 app.use(bodyParser.urlencoded({ extended: true }));
