@@ -6,7 +6,7 @@ $(document).ready(function () {
         if (email == '' || password == '') {
             $('input[type="text"],input[type="password"]').css("border", "2px solid red");
             $('input[type="text"],input[type="password"]').css("box-shadow", "0 0 3px red");
-            alert("Please fill all fields...!!!!!!");
+            alert("Mohon isi kolom tersebut!");
         } else {
             $.post("login.php", { email1: email, password1: password },
                 function (data) {

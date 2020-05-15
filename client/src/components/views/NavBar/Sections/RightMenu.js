@@ -24,10 +24,10 @@ function RightMenu(props) {
     return (
       <Menu mode={props.mode}>
         <Menu.Item key="mail">
-          <a href="./views/Activity/Login.js">Login <Icon type="login" style={{ fontSize: 20, marginBottom: 3 }} /></a>
+          <a href="./views/v_Login/LoginPage">Login <Icon type="login" style={{ fontSize: 20, marginBottom: 3 }} /></a>
         </Menu.Item>
         <Menu.Item key="app">
-          <a href="./Activity/Register.js">Register <Icon type="user" style={{ fontSize: 20, marginBottom: 3 }} /></a>
+          <a href="./views/v_Register/RegisterPage">Register <Icon type="user" style={{ fontSize: 20, marginBottom: 3 }} /></a>
         </Menu.Item>
       </Menu>
     )
