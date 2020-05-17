@@ -8,7 +8,7 @@ function Footer() {
             flexDirection: 'column', alignItems: 'center',
             justifyContent: 'center', fontSize:'1rem'
         }}>
-           <p> Selamat Belanja  <Icon type="smile" /></p>
+           <p><Icon type="shop" spin="true" theme="filled"/> Selamat Belanja  <Icon type="shop" spin="true" /></p>
         </div>
     )
 }

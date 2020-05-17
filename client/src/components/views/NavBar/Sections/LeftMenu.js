@@ -1,26 +1,32 @@
 import React from 'react';
-import { Menu, Icon, Badge } from 'antd';
-const SubMenu = Menu.SubMenu;
-const MenuItemGroup = Menu.ItemGroup;
+import { Menu } from 'antd';
+import { useSelector } from "react-redux";
 
 function LeftMenu(props) {
+  const user = useSelector(state => state.user)
+
+  if (user.userData && !user.userData.isAuth) {
   return (
     <Menu mode={props.mode}>
     <Menu.Item key="mail">
-      <a href="/">Beranda <Icon type="home" style={{ fontSize: 20, marginBottom: 3 }} /></a>
+      <a href="/">Beranda</a>
     </Menu.Item>
-    <SubMenu title={<span>Halaman <Icon type="shop" style={{ fontSize: 20, marginBottom: 3 }} /></span>}>
-      <MenuItemGroup title="Halaman 1">
-        <Menu.Item key="setting:1">Opsi 1</Menu.Item>
-        <Menu.Item key="setting:2">Opsi 2</Menu.Item>
-      </MenuItemGroup>
-      <MenuItemGroup title="Halaman 2">
-        <Menu.Item key="setting:3">Opsi 3</Menu.Item>
-        <Menu.Item key="setting:4">Opsi 4</Menu.Item>
-      </MenuItemGroup>
-    </SubMenu>
+    <Menu.Item key="" hidden={true}>
+      <a href="/">Langganan</a>
+    </Menu.Item>
   </Menu>
   )
+}
+return (
+  <Menu mode={props.mode}>
+  <Menu.Item key="mail">
+    <a href="/">Beranda</a>
+  </Menu.Item>
+  <Menu.Item key="">
+    <a href="/">Langganan</a>
+  </Menu.Item>
+</Menu>
+)
 }
 
 export default LeftMenu
