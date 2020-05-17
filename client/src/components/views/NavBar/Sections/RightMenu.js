@@ -6,16 +6,15 @@ import { USER_SERVER } from '../../../Config';
 import { withRouter } from 'react-router-dom';
 import { useSelector } from "react-redux";
 
-
 function RightMenu(props) {
   const user = useSelector(state => state.user)
 
   const logoutHandler = () => {
     axios.get(`${USER_SERVER}/logout`).then(response => {
       if (response.status === 200) {
-        props.history.push("./views/Activity/Login.js");
+        props.history.push("/login");
       } else {
-        alert('Logout gagal')
+        alert('Gagal keluar!')
       }
     });
   };
@@ -24,33 +23,33 @@ function RightMenu(props) {
     return (
       <Menu mode={props.mode}>
         <Menu.Item key="mail">
-          <a href="/login">Login <Icon type="login" style={{ fontSize: 20, marginBottom: 3 }} /></a>
+          <a href="/login">Masuk</a>
         </Menu.Item>
         <Menu.Item key="app">
-          <a href="/register">Register <Icon type="user" style={{ fontSize: 20, marginBottom: 3 }} /></a>
+          <a href="/register">Daftar</a>
         </Menu.Item>
       </Menu>
     )
-  } else {
-    return (
+  } else {   
+    return ( 
       <Menu mode={props.mode}>
-
         <Menu.Item key="history">
-          <a href="/history">Riwayat <Icon type="history" style={{ fontSize: 20, marginBottom: 3 }} /></a>
+          <a href="/history">Riwayat</a>
         </Menu.Item>
 
-        <Menu.Item key="upload">
-          <a href="/product/upload">Unggah <Icon type="upload" style={{ fontSize: 20, marginBottom: 3 }} /></a>
+         <Menu.Item key="upload">
+          <a href="/product/upload">Unggah Barang</a>
         </Menu.Item>
 
-        <Menu.Item key="cart">
-          <a href="/user/cart">Keranjang <Icon type="shopping-cart" style={{ fontSize: 20, marginBottom: 3 }} />
-          </a>
-        </Menu.Item>
-
+        <Menu.Item key="cart" style={{ paddingBottom: 3 }}>
+        <Badge count={user.userData && user.userData.cart.length} overflowCount={10}>
+         <a href="/user/cart" style={{ marginRight: -22 , color:'#667777'}}>
+           <Icon type="shopping-cart" style={{ fontSize: 32, marginBottom: 3 }} /></a>
+        </Badge>
+        </Menu.Item> 
 
         <Menu.Item key="logout">
-          <a>Keluar <Icon type="logout" style={{ fontSize: 20, marginBottom: 3 }} /></a>
+          <a onClick={logoutHandler}>Keluar</a>
         </Menu.Item>
       </Menu>
     )
