@@ -1,24 +1,45 @@
 # Furniture Online Shop (Toko Perabotan Online)
 
+Website ini merupakan E-Commerce Shop khusus furnitur atau perabotan, dimana user dapat mengunggah produknya sendiri.
+
+## Beberapa fitur dalam website ini:
+* Menggunakan Mern Stack
+* API Server
+* Cukup responsive
+* Autentikasi menggunakan JWT
+* Dapat melakukan pencarian barang
+
+## Kekurangan website ini:
+* Tidak dapat memberi rating terhadap produk.
+* Tidak dapat sorting barang.
+* Tidak terdapat user Admin.
+
+
+## Proses CRUD dalam aplikasi ini:
+* Create: Terdapat dalam fitur Register, Add to chart, Halaman Chart, (dan beberapa lainnya).
+* Read, terdapat dalam Halaman Awal, Halaman Chart (dan beberapa lainnya)
+* Update, terdapat dalam halaman chart.
+* Delete, terdapat dalam halaman chart.
+
 Proses Instalasi:
 
-Quick Start
-#Install dependencies for server
+## Clone Repository
+https://github.com/dwikykasih/FurnShop.git
 
-npm install
-#Install dependencies for client
+## Install dependencies untuk server
+`npm install`
 
-npm run client-install
-#Run the client & server with concurrently
+## Install dependencies untuk client
+`npm run client-install`
 
-npm run dev
-#Run the Express server only
+## (Opsional) Memperbaiki file yang rusak (jika memungkinkan).
+`npm audit fix` (di client dan server)
 
-npm run server
-#Run the React client only
-
-npm run client
-#Server runs on http://localhost:5000 and client on http://localhost:3000
+## Menjalankan server dan client secara konkuren
+`npm run dev`
 
 
-Version 1.0.0
+## Website ini dibuat oleh:
+### Moch Dwiky Fajar Kasih (14116173)
+### Muhammad Julian (14116165)
+### Hemat Simamora
